@@ -1,0 +1,61 @@
+﻿@page "/bookings"
+@inject HttpClient Http
+
+<PageTitle>Bookings</PageTitle>
+<div class="sidebar">
+    <NavMenu />
+</div>
+<h1>Bookings</h1>
+
+@*<p>This component demonstrates fetching data from the server.</p>*@
+
+@if (forecasts == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Room Type</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var forecast in forecasts)
+            {
+            <tr>
+                <td>@forecast.Name</td>
+                <td>@forecast.Date.ToShortDateString()</td>
+                <td>@forecast.RoomType</td>
+                <td>@forecast.Status</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private Student[]? forecasts;
+
+    protected override async Task OnInitializedAsync()
+    {
+        forecasts = await Http.GetFromJsonAsync<Student[]>("sample-data/students.json");
+    }
+
+    public class Student
+    {
+        public string? Name { get; set; }
+
+        public DateTime Date { get; set; }
+
+        public string? RoomType { get; set; }
+
+        public string? Status { get; set; }
+
+    }
+}
+

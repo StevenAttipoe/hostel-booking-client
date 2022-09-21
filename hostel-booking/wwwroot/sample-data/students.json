@@ -1,0 +1,28 @@
+﻿[
+  {
+    "name": "Steven Attipoe",
+    "date": "2023-05-06",
+    "roomType": "Three-in-a-room",
+    "status": "Paid"
+  },
+  {
+    "name": "Nii Armah Tettey",
+    "date": "2023-03-08",
+    "roomType": "Two-in-a-room",
+    "status": "Paid"
+  },
+  {
+    "name": "Jesse Srodah",
+    "date": "2022-12-06",
+    "roomType": "Three-in-a-room",
+    "status": "Paid"
+  },
+  {
+    "name": "Richard Clottey",
+    "date": "2022-06-19",
+    "roomType": "Three-in-a-room",
+    "status": "Paid"
+  }
+
+]
+
